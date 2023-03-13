@@ -3,6 +3,7 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -18,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
 
 @Composable
 @Preview
@@ -28,21 +30,26 @@ fun App() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.White),
+                .background(Color.White)
+                .padding(16.dp),
             contentAlignment = Alignment.Center
         ) {
             MainContent(
                 modifier = Modifier
                     .clip(RoundedCornerShape(24.dp))
-                    .fillMaxSize(0.8f)
-                    .background(Color(0xFFEFEFEF))
+                    .fillMaxSize()
+                    .background(Color(0xFFDADADA))
             )
         }
     }
 }
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        onCloseRequest = ::exitApplication,
+        state = rememberWindowState(width = 1000.dp, height = 800.dp),
+        title = "Med +"
+    ) {
         App()
     }
 }
