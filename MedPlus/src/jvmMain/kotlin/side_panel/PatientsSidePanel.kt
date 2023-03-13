@@ -17,10 +17,10 @@ fun PatientsSidePanel(
     val listState = rememberLazyListState()
 
     val patientsList = listOf(
-        Patient("lady1.webp", "S. Chichi", "Female", 25),
-        Patient("lady1.webp", "N. Starry", "Male", 19),
-        Patient("lady1.webp", "K. Pookie", "Female", 28),
-        Patient("lady1.webp", "T. Kenny", "Male", 24),
+        Patient("lady2.jpg", "S. Chichi", "Female", 25),
+        Patient("lady2.jpg", "N. Starry", "Male", 19),
+        Patient("lady2.jpg", "K. Pookie", "Female", 28),
+        Patient("lady2.jpg", "T. Kenny", "Male", 24),
     )
 
     LazyColumn(
@@ -29,9 +29,7 @@ fun PatientsSidePanel(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(patientsList) { patient ->
-
-
-
+            PatientItem(patient)
         }
     }
 

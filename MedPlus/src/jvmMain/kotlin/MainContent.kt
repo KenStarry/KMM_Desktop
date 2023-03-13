@@ -16,6 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import side_panel.PatientsSidePanel
 
 @Composable
 fun MainContent(
@@ -76,6 +77,11 @@ fun MainContent(
             )
 
             //  patients column
+            PatientsSidePanel(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(500.dp)
+            )
 
         }
 
